@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ page_title }}</title>{% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'profile_user/css/statistics.css' %}">
+{% endblock %} 
+{% block content %}
+<div class="statistics-container">
+    <div class="statistics-card">
+        <h2>Статистика користувача {{ user.username }}</h2>
+        {% if statics %}
+            <div class="statistics-list">
+                {% for static in statics %}
+                <div class="statistics-item">
+                    <strong>Кількість активних завдань:</strong> <span>{{ static.active_tasks }}</span>
+                </div>
+                <div class="statistics-item">
+                    <strong>Всього виконано завдань:</strong> <span>{{ static.completed_tasks }}</span>
+                </div>
+                <div class="statistics-item">
+                    <strong>Всього прострочених завдань:</strong> <span>{{ static.overdue_tasks }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Наразі статистика для цього акаунту відсутня.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

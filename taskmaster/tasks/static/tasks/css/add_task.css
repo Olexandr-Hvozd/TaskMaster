@@ -1,0 +1,128 @@
+#taskForm {
+    display: flex;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+#taskForm:hover {
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.25);
+}
+
+#taskForm h2 {
+    text-align: center;
+    color: #007bff; 
+    margin-bottom: 20px;
+}
+
+.add-ts-form input,
+.add-ts-form select,
+.add-ts-form textarea {
+    height: 35px;
+    font-size: 17px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.add-ts-form input:focus,
+.add-ts-form select:focus,
+.add-ts-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+#taskForm label {
+    margin-bottom: 15px; 
+    font-weight: bold; 
+}
+
+.add-ts-form input,
+.add-ts-form select,
+.add-ts-form textarea {
+    height: 35px;
+    font-size: 17px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.add-ts-form textarea {
+    height: 120px;
+}
+
+.add-ts-form input:focus,
+.add-ts-form select:focus,
+.add-ts-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.add-ts-form input,
+.add-ts-form select,
+.add-ts-form textarea {
+    margin-bottom: 20px; 
+}
+
+.form-row-btn {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-save, .btn-reset, .btn-clear {
+    background-color: #007bff;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.45s ease;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+.btn-reset {
+    background-color: #a4a4a4;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.45s ease;
+}
+
+.btn-reset:hover {
+    background-color: #484848;
+}
+
+.btn-clear {
+    background-color: #dadada;
+    width: 200px;
+    color: #ffffff;
+    transition: all 0.45s ease;  
+}
+
+.btn-clear:hover {
+    background-color: #484848;
+}

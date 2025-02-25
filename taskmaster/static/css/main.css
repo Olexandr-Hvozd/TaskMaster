@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.nuv {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 9px 25px;
+    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #00366f);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.nuv:hover {
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    width: 50px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+.logo-name {
+    color: #ffffff;
+    margin-right: 880px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none; 
+    align-items: center; 
+}
+
+.nav-list li {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 15px;
+}
+
+.nav-list-linc {
+    position: relative;
+    color: #ffffff; 
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-list-linc::after {
+    content: "";
+    background: #ffffff;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all 0.25s ease;
+}
+
+.nav-list-linc:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-list-linc.active::after, 
+.nav-list-linc:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-list-linc:hover {
+    color: #ffffff;
+}
+
+.nav-list li:last-of-type a {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #007bff;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-list li:last-of-type a:hover {
+    background-color: rgb(27, 1, 161);
+    transform: scale(1.07);
+}
+
+.nav-list li a {
+    position: relative;
+    color: #ffffff; 
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-list li a:hover {
+    color: #ffffff; 
+}
+
+
+.nav-list li:last-of-type a:hover {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.07);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    height: calc(100vh - 80px); 
+}
+
+.btn-logout {
+    background-color: #2318c7; 
+    color: white; 
+    height: 30px; 
+    line-height: 30px; 
+    padding: 0 10px; 
+    border-radius: 4px; 
+    border: none; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.btn-logout:hover {
+    background-color: rgb(27, 1, 161);
+    color: white;
+    transform: scale(1.05); 
+}

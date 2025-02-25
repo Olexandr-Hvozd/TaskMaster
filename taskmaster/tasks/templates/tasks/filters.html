@@ -1,0 +1,25 @@
+<aside class="filter-panel">
+    <h3>Загальні фільтри</h3>
+    <ul>
+        <li><a href="?filter=in_progress{% if request.GET.priority %}&priority={{ request.GET.priority }}{% endif %}" 
+            class="{% if request.GET.filter == 'in_progress' or not request.GET.filter %}active{% endif %}">Активні</a></li>
+        <li><a href="?filter=all{% if request.GET.priority %}&priority={{ request.GET.priority }}{% endif %}" 
+            class="{% if request.GET.filter == 'all'  %}active{% endif %}">Всі завдання</a></li>
+        <li><a href="?filter=completed{% if request.GET.priority %}&priority={{ request.GET.priority }}{% endif %}" 
+            class="{% if request.GET.filter == 'completed' %}active{% endif %}">Виконані</a></li>
+        <li><a href="?filter=overdue{% if request.GET.priority %}&priority={{ request.GET.priority }}{% endif %}" 
+            class="{% if request.GET.filter == 'overdue' %}active{% endif %}">Прострочені</a></li>
+    </ul>
+    <h3>Фільтр за важливістю</h3>
+    <ul>
+        <li><a href="?priority=low{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}" 
+            class="{% if request.GET.priority == 'low' %}active{% endif %}">Низька</a></li>
+        <li><a href="?priority=medium{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}" 
+            class="{% if request.GET.priority == 'medium' %}active{% endif %}">Середня</a></li>
+        <li><a href="?priority=high{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}" 
+            class="{% if request.GET.priority == 'high' %}active{% endif %}">Висока</a></li>
+        <li><a href="?priority=very_high{% if request.GET.filter %}&filter={{ request.GET.filter }}{% endif %}" 
+            class="{% if request.GET.priority == 'very_high' %}active{% endif %}">Дуже висока</a></li>
+    </ul>
+    <a href="?filter=in_progress" class="btn-reset-filters">Скинути фільтри</a>
+</aside>

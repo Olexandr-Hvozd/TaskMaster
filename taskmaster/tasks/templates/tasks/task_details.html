@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ page_title }}</title>{% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'tasks/css/task_details.css' %}">
+{% endblock %}
+{% block content %}
+<div class="profile-container">
+    <h2 class="profile-title">Деталі завдання</h2>
+
+    <div class="details-container">
+        <div class="date-row">
+            <h2>Назва:</h2>
+            <h3>{{ task.title }}</h3>
+        </div>
+
+        <div class="date-row">
+            <h2>Важливість:</h2>
+            <h3>{{ task.priority }}</h3>
+        </div>
+
+        <div class="date-row full-width">
+            <h2>Опис:</h2>
+            <h3>{{ task.description }}</h3>
+        </div>
+
+        <div class="date-row">
+            <h2>Кінцева дата:</h2>
+            <h3>{{ task.due_date }}</h3>
+        </div>
+
+        <div class="date-row">
+            <h2>Статус:</h2>
+            <h3>{{ task.get_status_display_ua }}</h3>
+        </div>
+
+        <div class="date-row">
+            <h2>Дата створення:</h2>
+            <h3>{{ task.created_at }}</h3>
+        </div>
+
+        <div class="date-row">
+            <h2>Останнє оновлення:</h2>
+            <h3>{{ task.updated_at }}</h3>
+        </div>
+    </div>
+    <div class="button-row">
+        <a href="{% url 'home' %}" class="btn-back">Назад</a>
+        <a href="{% url 'delete_task' task.id %}" class="btn-delete">Видалити</a>
+        
+        {% if task.status != 'completed' and task.status != 'overdue' %}
+            <a href="{% url 'edit_task' task.id %}" class="btn-edit">Редагувати</a>
+        {% endif %}
+        {% if task.status != 'completed' and task.status != 'overdue' %}
+        <form method="POST" action="{% url 'to_done_task' task.id %}">
+            {% csrf_token %}
+            <button type='submit' class="btn-done">Виконати</button>
+        </form>
+        {% endif %}
+        {% if task.status == 'overdue' %}
+        <form method="POST" action="{% url 'to_active_task' task.id %}">
+            {% csrf_token %}
+            <button type='submit' class="btn-done">Зробити активним</button>
+        </form>
+        {% endif %}
+    </div>
+    
+</div>
+{% endblock %}

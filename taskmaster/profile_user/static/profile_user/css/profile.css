@@ -1,0 +1,84 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-form {
+    background-color: #ffffff;
+    padding: 60px 50px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.profile-title {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid #007bff;
+    white-space: nowrap; 
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0; 
+}
+
+.date-row h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.date-row h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px;
+    font-weight: 500;
+    white-space: nowrap; 
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.btn-password, .btn-edit {
+    padding: 12px 25px;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 48%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-password {
+    background-color: #919395;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-password:hover {
+    background-color: #4c4e50;
+}
+
+.btn-edit:hover {
+    background-color: #2d6cb8;
+}

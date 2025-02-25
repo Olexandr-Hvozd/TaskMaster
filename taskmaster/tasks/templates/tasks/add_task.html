@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ page_title }}</title>{% endblock %}
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'tasks/css/add_task.css' %}">
+{% endblock %}
+{% block content %}
+<main class="container">
+    <form method="POST" class="add-ts-form" id="taskForm">
+        {% csrf_token %}
+        <h2>Додати нове завдання</h2>
+        {{ form.as_p }}
+        <div class="form-row-btn">
+            <a href="{% url 'home' %}" class="btn-reset">Скасувати</a>
+            <button type="reset" class="btn-clear">Очистити поля</button>
+            <button type="submit" class="btn-save">Зберегти</button>
+        </div>
+    </form>
+</main>
+{% endblock %}

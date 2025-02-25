@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ page_title }}</title>{% endblock %}
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'tasks/css/task_list.css' %}">
+<link rel="stylesheet" href="{% static 'tasks/css/pagination.css' %}">
+{% endblock %}
+{% block content %}
+<main class="container">
+    {% include "tasks/filters.html" %}
+    <section class="tasks-panel">
+        <h2>Ваші завдання</h2>
+        {% if tasks %}
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Назва</th>
+                    <th>Опис</th>
+                    <th>Важливість</th>
+                    <th>Кінцевий термін виконання</th>
+                    {% if request.GET.filter == 'all' %}
+                    <th>Статус</th>
+                    {% endif %}
+                    {% if request.GET.filter != 'completed'%}
+                    <th colspan="3">Дія</th>
+                    {% endif %}
+                    {% if request.GET.filter == 'completed'%}
+                    <th colspan="1">Дія</th> 
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td><a href="{% url 'task_details' task.id %}" class="task-title">{{ task.title }}</a></td>
+                    <td class="task-description">{{ task.description }}</td>
+                    <td>{{ task.priority }}</td>
+                    <td>{{ task.due_date }}</td>
+                    {% if request.GET.filter == 'all' %}
+                    <td>{{ task.get_status_display_ua }}</td>
+                    {% endif %}
+                    {% if task.status == 'completed' or task.status == 'overdue' %}
+                    <td colspan="3">
+                        <a href="{% url 'delete_task' task.id %}" class="btn-delete">Видалити</a>
+                    </td>
+                    {% else %}
+                    <td>
+                        <a href="{% url 'delete_task' task.id %}" class="btn-delete">Видалити</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'edit_task' task.id %}" class="btn-edit">Редагувати</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{% url 'to_done_task' task.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-done">Виконати</button>
+                        </form>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+        {% else %}
+        <p>Наразі завдання відсутні</p>
+        {% endif %}
+        <a href="{% url 'add_task' %}" class="btn-add-task">Додати нове завдання</a>
+        {% include "pagination.html" %}
+    </section>
+</main>
+{% endblock %}

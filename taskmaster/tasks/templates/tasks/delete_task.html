@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ page_title }}</title>{% endblock %}
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'tasks/css/delete_task.css' %}">
+{% endblock %}
+{% block content %}
+  <div class="form-container">
+      <h2>Ви впевнені, що хочете видалити це завдання?</h2>
+      <p><strong>Назва:</strong> {{ task.title }}</p>
+      <p><strong>Важливість:</strong> {{ task.priority }}</p>
+      <p><strong>Кінцевий термін:</strong> {{ task.due_date }}</p>
+      <div class="button-row">
+          <form method="POST">
+              {% csrf_token %}
+              <button type="submit" class="btn-delete">Видалити</button>
+          </form>
+          <a href="{% url 'home' %}" class="btn-cancel">Скасувати</a>
+      </div>
+  </div>
+{% endblock %}
+

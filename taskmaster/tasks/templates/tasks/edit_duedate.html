@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}<title>{{ page_title }}</title>{% endblock %}{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'tasks/css/edit_due_date.css' %}">
+{% endblock %}
+{% block content %}
+<div class="profile-container">
+    <h2 class="profile-title">Щоб зробити дане завдання знову активним, оберіть нову кінцеву дату виконання</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="date-row">
+            <label for="id_due_date">Нова дата виконання:</label>
+            {% if form.due_date.errors %}
+            <div class="error-message">
+                {{ form.due_date.errors }}
+            </div>
+            {% endif %}
+            {{ form.due_date }}
+        </div>
+
+        <div class="button-row">
+            <a href="{% url 'home' %}" class="btn-back">Скасувати</a>
+            <button type="submit" class="btn-done">Активувати</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'auth_user/css/style.css' %}">
+    <link rel="icon" href="{% static 'tasks/img/logo_ico.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        {% include "auth_user/section.html" with quote=quote %}
+        <div class="container">
+            <div class="register-form">
+                <h2>Реєстрація</h2>
+                {% if messages %}
+                    {% for message in messages %}
+                        <li class="custom-message">{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+                <form method="POST" action="{% url 'auth_user:register' %}">  
+                    {% csrf_token %}
+                    {{ form.as_p}}
+                    <button type="submit" class="btn">Зареєструватися</button>
+                </form>
+                <p>Вже маєте акаунт? <a href="{% url 'auth_user:login' %}">Ввійти</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

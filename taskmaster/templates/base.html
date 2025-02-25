@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="{% static 'tasks/img/logo_ico.ico' %}" type="image/x-icon">
+    {% block title %} {% endblock %}
+    {% block extra_css %} {% endblock %}
+</head>
+<body>
+    <header class="header">
+        <nav class="nuv">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'tasks/img/logo.png' %}" alt="Logo" class="logo">
+            </a>
+            <h1 class="logo-name">Task Master</h1>
+            <ul class="nav-list">
+                <li>
+                    <a class="nav-list-linc" href="{% url 'home' %}">Головна</a>
+                </li>
+                <li>
+                    <a class="nav-list-linc" href="{% url 'statistics' %}">Статистика</a>
+                </li>
+                <li>
+                    <a class="nav-list-linc" href="{% url 'profile' %}">Акаунт</a>
+                </li>
+                <li>
+                    <form method="POST" action="{% url 'auth_user:logout' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-logout">Вийти</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block content%} {% endblock %}
+</body>
+</html>

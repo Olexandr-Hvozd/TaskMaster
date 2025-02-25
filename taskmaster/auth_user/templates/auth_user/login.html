@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'tasks/img/logo_ico.ico' %}" type="image/x-icon">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{% static 'auth_user/css/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        {% include "auth_user/section.html" with quote=quote %}       
+        <div class="container">
+            <div class="register-form">
+                <h2>Вхід</h2>
+                {% if messages %}
+                    {% for message in messages %}
+                        <li class="custom-message">{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+                <form method="POST" action="{% url 'auth_user:login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn">Ввійти</button>
+                    <p>Ще не маєте акаунт? <a href="{% url 'auth_user:register' %}">Зареєструватися</a></p>
+                    <p><a href="{% url 'auth_user:password_reset' %}">Забули пароль?</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

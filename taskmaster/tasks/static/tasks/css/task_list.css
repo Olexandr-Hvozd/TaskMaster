@@ -1,0 +1,480 @@
+.filter-panel {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    width: 250px;
+}
+
+.filter-panel h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #007bff;
+}
+
+.filter-panel ul {
+    list-style: none;
+}
+
+.filter-panel ul li {
+    margin-bottom: 10px;
+}
+
+.filter-panel ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.filter-panel ul li a:hover {
+    color: #0056b3;
+}
+
+.tasks-panel {
+    flex-grow: 1;
+    margin-left: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    max-height: 83vh;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.tasks-panel h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #007bff;
+}
+
+.task-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.task-list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e1e4e8;
+    font-size: 18px;
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+.filter-panel ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: block;
+}
+
+.filter-panel ul li a:hover,
+.filter-panel ul li a:focus {
+    background-color: #f0f8ff;
+    color: #0056b3;
+}
+
+.filter-panel ul li a.active,
+.filter-panel ul li a:active {
+    background-color: #007bff;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.btn {
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    position: fixed; 
+    padding: 16px;
+    width: 180px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+.btn.add-task {
+    position: absolute; 
+    bottom: 60px;      
+    right: 60px;       
+    height: 50px;
+    width: 180px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn.edit-task {
+    margin-top: 450px;
+    margin-left: 825px;
+}
+
+.btn.delete-task {
+    margin-top: 450px;
+    margin-left: 640px;
+}
+
+.btn.add-task:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+.custom-message {
+    font-family: Arial, sans-serif; 
+    color: rgb(0, 0, 0);                   
+    font-size: 12px;    
+    margin: 10px 0;                  
+}
+
+.nav-list li:last-of-type a {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #007bff;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 4px;
+    transition:  all 0.3s ease;
+}
+
+#taskForm {
+    display: flex;
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 700px;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+#taskForm:hover {
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.25);
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.add-ts-form input,
+.add-ts-form select,
+.add-ts-form textarea {
+    height: 35px;
+    font-size: 17px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.add-ts-form input:focus,
+.add-ts-form select:focus,
+.add-ts-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+#taskForm label {
+    margin: 20px 0 5px;
+}
+
+#taskDescription {
+    height: 70px;
+}
+
+.btn-save {
+    background-color: #007bff;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reset {
+    background-color: #a4a4a4;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+.btn-reset:hover {
+    background-color: #484848;
+}
+
+.form-row-btn {
+    display: flex;               
+    justify-content: center;      
+    gap: 20px;                   
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #e2e6ea;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.table td {
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+    width: 40%; 
+}
+
+.table th:nth-child(4), .table td:nth-child(4) {
+    width: 15%; 
+}
+
+.table td .btn {
+    font-size: 14px;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.table td .btn-edit {
+    background-color: #ffbf00;
+    color: white;
+}
+
+.table td .btn-edit:hover {
+    background-color: #e69532;
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background-color: #464646; 
+    color: white; 
+    font-size: 11px; 
+    font-weight: bold;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    text-align: center;
+    text-decoration: none; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    border: none; 
+    display: inline-block;
+}
+
+.btn-delete:hover {
+    background-color: #212020;
+    transform: scale(1.05); 
+}
+
+.table td .btn-done {
+    background-color: #28a745;
+    color: white;
+}
+
+.table td .btn-done:hover {
+    background-color: #18722b;
+    transform: scale(1.05);
+}
+
+.pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.step-links {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.step-links a {
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.step-links .current {
+    font-weight: bold;
+    color: #333;
+}
+
+.step-links a:hover {
+    background-color: #ddd;
+}
+
+.step-links .page-link {
+    margin: 0 5px;
+}
+
+.btn-add-task {
+    position: absolute; 
+    bottom: 50px; 
+    right: 40px; 
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.btn-add-task:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+.btn-reset-filters {
+    display: inline-block;
+    background-color: #b7b7b7;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset-filters:hover {
+    background-color: #d8d8d8;
+}
+
+button {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 8px 10px; 
+    border-radius: 8px; 
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+}
+
+.btn-edit {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+}
+
+.form-row-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; 
+    margin-top: 20px;
+}
+
+.task-title {
+    font-size: 18px;
+    font-weight: bold;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: normal;
+    color: #579fec; 
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.task-title:hover {
+    color: #084696; 
+    transform: scale(1.05); 
+}
+
+.task-description {
+    max-width: 260px;
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
