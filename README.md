@@ -29,25 +29,33 @@ as well as track performance statistics.
 
 
 2. **Navigate to the project directory:**:
+    ```cmd
     cd taskmaster
 
 3. **Create a virtual environment and activate it: Create a virtual environment:**
+    ```cmd
     python -m venv venv
 
     Activation for Windows:
+    ```cmd
     venv\Scripts\activate 
 
     Activation for Mac/Linux:
+    ```cmd
     source venv/bin/activate
 
 4. **Install dependencies:**
+    ```cmd
     pip install -r requirements.txt
 
 5. **Run migrations:**
+    ```cmd
     python manage.py migrate
 
 6. **Start the server:**
+    ```cmd
     python manage.py runserver
 
 7. **Open the application in your browser:**
+    ```cmd
     Go to the following address: http://127.0.0.1:8000/
