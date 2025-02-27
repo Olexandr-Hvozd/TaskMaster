@@ -1,44 +1,53 @@
-Task Master – це веб-застосунок для керування особистими завданнями, створений на Django. 
-Додаток дозволяє користувачам реєструватися, створювати, редагувати, виконувати та видаляти завдання, 
-а також відстежувати статистику продуктивності.
+# Task Master
 
-🚀 Функціонал
-✅ Реєстрація та авторизація користувачів
-✅ Додавання, редагування, виконання та видалення завдань
-✅ Позначення завдання як виконаного
-✅ Перегляд всіх наявних завдань
-✅ Відстеження статистики виконаних завдань
-✅ Зміна пароля та даних профілю
-✅ Відновлення пароля через email
+Task Master is a web application for managing personal tasks, built with Django. 
+The application allows users to register, create, edit, complete, and delete tasks, 
+as well as track performance statistics.
 
-🛠️ Технології
-Python 3.11.9
-Django 5.1.4
-SQLite
-CSS
-HTML
+## 🚀 Features
 
-🔧 Встановлення
+- ✅ User registration and login
+- ✅ Adding, editing, completing, and deleting tasks
+- ✅ Viewing all existing tasks
+- ✅ Tracking completed task statistics
+- ✅ Changing password and profile details
+- ✅ Password recovery via email
 
-Клонуйте репозиторій:
-git clone https://github.com/твій-юзернейм/task-master.git
+## 🛠️ Technologies
 
-Перейдіть в директорію:
-cd taskmaster
+- Python 3.11.9
+- Django 5.1.4
+- SQLite
+- CSS
+- HTML
 
-Створіть віртуальне середовище та активуй його:
-python -m venv venv
-source venv/bin/activate  # Mac/Linux
-venv\Scripts\activate  # Windows
+## 🔧 Installation
 
-Встанови залежності:
-pip install -r requirements.txt
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Olexandr-Hvozd/TaskMaster.git
 
-Виконайте міграції:
-python manage.py migrate
 
-Запустіть сервер:
-python manage.py runserver
+2. **Navigate to the project directory:**:
+    cd taskmaster
 
-Відкрийте у браузері:
-http://127.0.0.1:8000/
+3. **Create a virtual environment and activate it: Create a virtual environment:**
+    python -m venv venv
+
+    Activation for Windows:
+    venv\Scripts\activate 
+
+    Activation for Mac/Linux:
+    source venv/bin/activate
+
+4. **Install dependencies:**
+    pip install -r requirements.txt
+
+5. **Run migrations:**
+    python manage.py migrate
+
+6. **Start the server:**
+    python manage.py runserver
+
+7. **Open the application in your browser:**
+    Go to the following address: http://127.0.0.1:8000/
