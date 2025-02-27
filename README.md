@@ -37,11 +37,9 @@ as well as track performance statistics.
     python -m venv venv
 
     Activation for Windows:
-    ```cmd
     venv\Scripts\activate 
 
     Activation for Mac/Linux:
-    ```cmd
     source venv/bin/activate
 
 4. **Install dependencies:**
