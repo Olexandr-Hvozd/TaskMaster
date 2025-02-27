@@ -52,7 +52,7 @@ class TaskDetail(LoginRequiredMixin, DataMixin, DetailView):
     template_name = "tasks/task_details.html"
     context_object_name = "task"
     pk_url_kwarg = "task_id"
-    page_title = "Деталі завданняя"
+    page_title = "Деталі завдання"
 
 
 class AddTask(LoginRequiredMixin, DataMixin, CreateView):
