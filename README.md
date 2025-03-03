@@ -17,7 +17,7 @@ as well as track performance statistics.
 
 - Python 3.11.9
 - Django 5.1.4
-- SQLite
+- MySQL
 - CSS
 - HTML
 
